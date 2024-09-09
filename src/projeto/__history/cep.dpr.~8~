@@ -1,0 +1,20 @@
+program cep;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  cep.view.principal in '..\view\cep.view.principal.pas' {cepViewFomPesquisa},
+  cep.model.interfaces in '..\model\interfaces\cep.model.interfaces.pas',
+  cep.model.factory in '..\model\classes\cep.model.factory.pas',
+  cep.model.apicep in '..\model\classes\apiCep\cep.model.apicep.pas',
+  cep.model.viacep in '..\model\classes\viaCep\cep.model.viacep.pas',
+  cep.model.awesomeApi in '..\model\classes\awesomeApi\cep.model.awesomeApi.pas',
+  cep.controller.viacep in '..\controller\cep.controller.viacep.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TcepViewFomPesquisa, cepViewFomPesquisa);
+  Application.Run;
+end.

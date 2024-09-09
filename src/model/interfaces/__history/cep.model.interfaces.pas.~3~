@@ -1,0 +1,13 @@
+unit cep.model.interfaces;
+
+interface
+
+type
+  iViaCep = interface
+  ['{A6F440C9-225E-4E3C-871F-6A27654C85CC}']
+    function fnc_ViaCep: String;
+  end;
+
+implementation
+
+end.

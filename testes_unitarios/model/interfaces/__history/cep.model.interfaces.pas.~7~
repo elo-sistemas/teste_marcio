@@ -1,0 +1,22 @@
+unit cep.model.interfaces;
+
+interface
+
+uses
+   FireDAC.Comp.Client;
+
+type
+  iViaCep = interface
+  ['{A6F440C9-225E-4E3C-871F-6A27654C85CC}']
+    function fnc_ViaCep(Value: String; aDataSet: TFDMemTable): String;
+  end;
+
+  iFactory = interface
+  ['{701A50C8-1980-4F4A-99E0-75EA4B8CBC9D}']
+     function ViaCep: iViaCep;
+
+  end;
+
+implementation
+
+end.

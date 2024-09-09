@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/06/15 10:36:43.000.443,=C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/08 10:42:14.000.208,=C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/08 10:42:47.000.005,=C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/08 10:43:40.000.059,C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\teste_marcio\testes_unitarios\cep.testes.pas</Transaction>
+    <Transaction>2024/09/08 10:43:47.000.924,C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Project2.dproj=C:\teste_marcio\testes_unitarios\Project2.dproj</Transaction>
+    <Transaction>2024/09/08 10:44:06.000.040,=C:\teste_marcio\testes_unitarios\model\interfaces\cep.model.interfaces.pas</Transaction>
+    <Transaction>2024/09/08 10:44:23.000.312,=C:\teste_marcio\testes_unitarios\model\classes\cep.model.factory.pas</Transaction>
+    <Transaction>2024/09/08 10:44:35.000.556,=C:\teste_marcio\testes_unitarios\model\classes\apiCep\cep.model.apicep.pas</Transaction>
+    <Transaction>2024/09/08 10:46:50.000.242,=C:\teste_marcio\testes_unitarios\model\classes\apiCep\cep.model.apicep.pas</Transaction>
+    <Transaction>2024/09/08 10:47:16.000.360,=C:\teste_marcio\testes_unitarios\model\interfaces\cep.model.interfaces.pas</Transaction>
+    <Transaction>2024/09/08 10:48:08.000.068,=C:\teste_marcio\testes_unitarios\model\classes\cep.model.factory.pas</Transaction>
+    <Transaction>2024/09/08 10:48:31.000.033,=C:\teste_marcio\testes_unitarios\model\classes\viaCep\cep.model.viacep.pas</Transaction>
+    <Transaction>2024/09/08 10:48:43.000.040,=C:\teste_marcio\testes_unitarios\model\classes\awesomeApi\cep.model.awesomeApi.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

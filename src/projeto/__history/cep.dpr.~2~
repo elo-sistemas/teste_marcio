@@ -1,0 +1,15 @@
+program cep;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  cep.view.principal in '..\view\cep.view.principal.pas' {Form1},
+  cep.model.interfaces in '..\model\interfaces\cep.model.interfaces.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

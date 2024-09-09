@@ -1,0 +1,97 @@
+unit cep.model.apicep;
+
+interface
+
+uses
+  cep.model.interfaces,
+  FireDAC.Comp.Client,
+  System.SysUtils;
+
+type
+  TModelApiCep = class(TInterfacedObject, iApiCep)
+  private
+
+  public
+     constructor create;
+     destructor destroy; override;
+     class function New: iApiCep;
+     function fnc_apiCep(Value: String; aDataSet: TFDMemTable): String;
+     function fnc_FormatarCEP(strCep: string): string;
+
+  end;
+
+implementation
+
+uses
+   RESTRequest4D,
+   DataSet.Serialize.Adapter.RESTRequest4D;
+
+{ TModelPessoa }
+
+constructor TModelApiCep.create;
+begin
+
+end;
+
+destructor TModelApiCep.destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelApiCep.New: iApiCep;
+begin
+   Result := Self.Create;
+end;
+
+function TModelApiCep.fnc_apiCep(Value: String; aDataSet: TFDMemTable): String;
+var
+   Resp : IResponse;
+   strCepFormatado: String;
+begin
+   strCepFormatado := EmptyStr;
+   strCepFormatado := fnc_FormatarCEP(Value);
+
+   Resp := TRequest.New.BaseURL('https://cdn.apicep.com/file/apicep/')
+              .Resource(strCepFormatado + '.json')
+              .Accept('application/json')
+              .Adapters(TDataSetSerializeAdapter.New(aDataSet))
+              .Get;
+
+   if (Resp.StatusCode = 503) then //site fora do ar Service Unavailable
+   begin
+      Result := 'apicep';
+      Exit
+   end
+
+   else
+   begin
+      if Resp.StatusCode = 200 then
+      begin
+         if Resp.Content.IndexOf('erro') > 0 then
+         begin
+            Result := 'CEP não encontrado';
+            Exit
+         end
+
+         else
+         begin
+            Result := 'Cep     : ' + aDataSet.FieldByName('Code').AsString + sLineBreak     +
+                      'Estado  : ' + aDataSet.FieldByName('state').AsString + sLineBreak    +
+                      'Cidade  : ' + aDataSet.FieldByName('city').AsString + sLineBreak     +
+                      'Endereço: ' + aDataSet.FieldByName('district').AsString + sLineBreak +
+                      'End     : ' + aDataSet.FieldByName('address').AsString + sLineBreak;
+         end;
+
+      end;
+
+   end;
+
+end;
+
+function TModelApiCep.fnc_FormatarCEP(strCep: string): string;
+begin
+   Result := FormatFloat('00000-000', StrToInt(strCep));
+end;
+
+end.

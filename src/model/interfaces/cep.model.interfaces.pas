@@ -1,0 +1,37 @@
+unit cep.model.interfaces;
+
+interface
+
+uses
+   FireDAC.Comp.Client;
+
+type
+  iViaCep = interface
+  ['{A6F440C9-225E-4E3C-871F-6A27654C85CC}']
+    function fnc_ViaCep(Value: String; aDataSet: TFDMemTable): String;
+  end;
+
+  iApiCep = interface
+  ['{77DC41B4-4699-4CF1-B04D-0DE7DBF06106}']
+    function fnc_apiCep(Value: String; aDataSet: TFDMemTable): String;
+  end;
+
+  iAwesomeApi = interface
+     ['{B26C7801-17F9-4D24-929C-0989702A422B}']
+    function fnc_AwesomeApi(Value: String; aDataSet: TFDMemTable): String;
+
+  end;
+
+  //apicep (https://apicep.com/api-de-consulta/)
+
+  iFactory = interface
+  ['{701A50C8-1980-4F4A-99E0-75EA4B8CBC9D}']
+     function ViaCep: iViaCep;
+     function ApiCep: iApiCep;
+     function ApiAwesomeApi: iAwesomeApi;
+
+  end;
+
+implementation
+
+end.

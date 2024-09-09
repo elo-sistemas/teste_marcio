@@ -1,0 +1,53 @@
+unit cep.model.viacep;
+
+interface
+
+uses
+  cep.model.interfaces,
+  FireDAC.Comp.Client;
+
+type
+  TModelViaCep = class(TInterfacedObject, iViaCep)
+  private
+
+  public
+     constructor create;
+     destructor destroy; override;
+     class function New: iViaCep;
+     function fnc_ViaCep(Value: String; aDataSet: TFDMemTable): String;
+
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TModelPessoa }
+
+constructor TModelViaCep.create;
+begin
+
+end;
+
+destructor TModelViaCep.destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelViaCep.New: iViaCep;
+begin
+   Result := Self.Create;
+end;
+
+function TModelViaCep.fnc_ViaCep(Value: String; aDataSet: TFDMemTable): String;
+begin
+   if (Value <> EmptyStr) then
+   begin
+
+   end;
+   Result := Value;
+end;
+
+end.

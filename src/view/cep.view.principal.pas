@@ -1,0 +1,93 @@
+{
+   Autor: Márcio Camilo
+   Data: 06/09/2024
+   Motivo: View responsável por preencher o cep vindo da factory
+ }
+unit cep.view.principal;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FMX.StdCtrls, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  FMX.Controls.Presentation, FMX.Edit, FMX.Objects, FMX.Layouts;
+
+type
+  TcepViewFomPesquisa = class(TForm)
+    Layout1: TLayout;
+    Layout5: TLayout;
+    Rectangle3: TRectangle;
+    Image5: TImage;
+    rectBusca: TRectangle;
+    Label1: TLabel;
+    edtCEP: TEdit;
+    lblEndereco: TLabel;
+    MemTableApiCep: TFDMemTable;
+    MemTableApiAwesomeApi: TFDMemTable;
+    MemTableViaCep: TFDMemTable;
+    procedure rectBuscaClick(Sender: TObject);
+  private
+    { Private declarations }
+    function SomenteNumero(str : String) : String;
+
+  public
+    { Public declarations }
+  end;
+
+var
+  cepViewFomPesquisa: TcepViewFomPesquisa;
+
+implementation
+
+uses
+   cep.model.factory;
+
+{$R *.fmx}
+
+procedure TcepViewFomPesquisa.rectBuscaClick(Sender: TObject);
+begin
+   //apicep
+   lblEndereco.Text := TModelFactory
+                          .New
+                          .ApiCep
+                          .fnc_ApiCep(SomenteNumero(edtCEP.Text), MemTableApiCep);
+
+   if (lblEndereco.Text = 'apicep') then  //caso a apicep esteja fora do ar tenta a awesomeapi
+   begin
+      //viacep
+      lblEndereco.Text := TModelFactory
+                             .New
+                             .ViaCep
+                             .fnc_ViaCep(SomenteNumero(edtCEP.Text), MemTableViaCep);
+   end
+
+   else
+   if (lblEndereco.Text = 'viacep') then  //caso a apicep esteja fora do ar tenta a awesomeapi
+   begin
+      //awesomeapi
+      lblEndereco.Text := TModelFactory
+                             .New
+                             .ApiAwesomeApi
+                             .fnc_AwesomeApi(SomenteNumero(edtCEP.Text), MemTableApiAwesomeApi);
+   end
+
+   else   //caso a todas as apis estejam fora do ar
+   if (lblEndereco.Text = 'awesomeApi') then  //caso a awesomeApi esteja fora do ar
+      lblEndereco.Text := 'As apis do viacep, apicep, awesomeapi estão fora do ar. Tente mais tarde ou a consulta não foi autorizada. Tente mais tarde';
+
+end;
+
+function TcepViewFomPesquisa.SomenteNumero(str: String): String;
+var
+  x : integer;
+begin
+  Result := EmptyStr;
+  for x := 0 to Length(str) - 1 do
+    if (str.Chars[x] In ['0'..'9']) then
+      Result := Result + str.Chars[x];
+end;
+
+end.

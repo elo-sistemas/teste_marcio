@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/06/15 10:36:43.000.443,=C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/07 11:38:51.000.139,=C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/07 11:39:22.000.426,C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx=C:\teste_marcio\src\view\cep.view.principal.fmx</Transaction>
+    <Transaction>2024/09/07 11:39:22.000.426,C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\teste_marcio\src\view\cep.view.principal.pas</Transaction>
+    <Transaction>2024/09/07 11:39:34.000.680,C:\Users\mcami\OneDrive\Documentos\Embarcadero\Studio\Projects\Project2.dproj=C:\teste_marcio\src\projeto\cep.dproj</Transaction>
+    <Transaction>2024/09/07 11:41:36.000.355,=C:\teste_marcio\src\projeto\Unit1.pas</Transaction>
+    <Transaction>2024/09/07 11:42:50.000.223,C:\teste_marcio\src\projeto\Unit1.pas=C:\teste_marcio\src\model\interfaces\cep.model.interfaces.pas</Transaction>
+    <Transaction>2024/09/07 11:43:49.000.089,=C:\teste_marcio\src\projeto\Unit1.pas</Transaction>
+    <Transaction>2024/09/07 11:44:41.000.526,C:\teste_marcio\src\projeto\Unit1.pas=C:\teste_marcio\src\model\classes\cep.model.viacep.pas</Transaction>
+    <Transaction>2024/09/07 12:23:08.000.924,=C:\teste_marcio\src\projeto\Unit1.pas</Transaction>
+    <Transaction>2024/09/07 12:23:36.000.117,C:\teste_marcio\src\projeto\Unit1.pas=C:\teste_marcio\src\model\classes\cep.model.factory.pas</Transaction>
+    <Transaction>2024/09/07 12:47:13.000.997,=C:\teste_marcio\src\projeto\Unit1.pas</Transaction>
+    <Transaction>2024/09/07 12:47:42.000.685,C:\teste_marcio\src\model\classes\cep.model.viacep.pas=</Transaction>
+    <Transaction>2024/09/07 12:48:26.000.038,=C:\teste_marcio\src\model\classes\viaCep\cep.model.viacep.pas</Transaction>
+    <Transaction>2024/09/07 12:48:55.000.380,C:\teste_marcio\src\projeto\Unit1.pas=C:\teste_marcio\src\model\classes\apiCep\cep.model.apicep.pas</Transaction>
+    <Transaction>2024/09/07 13:31:56.000.710,=C:\teste_marcio\src\projeto\Unit1.pas</Transaction>
+    <Transaction>2024/09/07 13:33:14.000.641,C:\teste_marcio\src\projeto\Unit1.pas=C:\teste_marcio\src\model\classes\awesomeApi\cep.model.awesomeApi.pas</Transaction>
+    <Transaction>2024/09/07 16:23:22.000.919,=C:\teste_marcio\src\projeto\Unit1.pas</Transaction>
+    <Transaction>2024/09/07 16:24:14.000.962,C:\teste_marcio\src\projeto\Unit1.pas=C:\teste_marcio\src\controller\cep.controller.viacep.pas</Transaction>
+    <Transaction>2024/09/08 10:00:01.000.619,C:\teste_marcio\src\controller\cep.controller.viacep.pas=</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

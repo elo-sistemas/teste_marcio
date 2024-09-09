@@ -1,0 +1,16 @@
+program cep;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  cep.view.principal in '..\view\cep.view.principal.pas' {Form1},
+  cep.model.interfaces in '..\model\interfaces\cep.model.interfaces.pas',
+  cep.model.viacep in '..\model\classes\cep.model.viacep.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

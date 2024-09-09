@@ -1,0 +1,56 @@
+unit cep.model.factory;
+
+interface
+
+uses
+   cep.model.interfaces;
+
+type
+  TModelFactory = class(TInterfacedObject, iFactory)
+  private
+
+  public
+     constructor create;
+     destructor destroy; override;
+     class function New: iFactory;
+
+     function ViaCep: iViaCep;
+     function Apiep: iApiCep;
+  end;
+
+implementation
+
+uses
+   cep.model.viacep,
+   cep.model.apicep;
+
+{ TModelFactory }
+
+function TModelFactory.Apiep: iApiCep;
+begin
+   Result := TModelFactory
+end;
+
+constructor TModelFactory.create;
+begin
+
+end;
+
+destructor TModelFactory.destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelFactory.New: iFactory;
+begin
+   Result := Self.Create;
+
+end;
+
+function TModelFactory.ViaCep: iViaCep;
+begin
+   Result := TModelViaCep.New;
+end;
+
+end.
